@@ -12,13 +12,13 @@ class Pc(Unit):
         self.initiative = initiative
 
 class Npc(Unit):
-    def __init__(self, name, initiative, max_hp, speed, stat_block):
+    def __init__(self, name, initiative, max_hp, speed, statblock):
         super().__init__(name)
         self.initiative = initiative
         self.max_hp = max_hp
         self.current_hp = max_hp
         self.speed = speed
-        self.stat_block = stat_block
+        self.statblock = statblock
 
 
     def take_damage(self, damage):

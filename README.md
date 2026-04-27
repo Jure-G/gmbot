@@ -1,4 +1,4 @@
-This is a combat helper for game masters in TTRPG-s.
+This is a combat helper for game masters in DND 5e.
 -   It tracks monster stats (stat block + current hp, current initiative, current spell slots, any condition it is under and 
     any special resources it may have)
 -   It constructs initiative order and gives the gm the currently active character and it's stats.
@@ -15,4 +15,6 @@ REMOVE FROM FIGHT.
 whatever you choose to do, the program will do any rolls necessary, print them out and print out an updated stat block with removed resources.
 if you END TURN or REMOVE FROM FIGHT the program goes to the next character in initiative order and do the same.
 
-
+statblocks.txt is an example of how statblocks must be written to get imported properly.
+before every statblock there must be a num = *number of same stat blocks you want included*
+directly under it there must be a stat block formatted as if you copied and pasted it from https://www.5esrd.com
