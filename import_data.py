@@ -5,6 +5,8 @@ def import_data(path_to_file):
     with open(path_to_file) as f:
         statblocks = f.read()
     list_of_lines = statblocks.splitlines()
+    num_nums = 0
+    num_stats = 0
 
     #list of dictionaries that contain (index of statblock start, index of statblock end, number after "num =") 
     list_of_statblock_data = []
@@ -13,9 +15,20 @@ def import_data(path_to_file):
     for line in list_of_lines:
         pattern = re.compile(r"num \= (\d+)")
         match = pattern.search(line)
+        pattern_stats = re.compile(r"(\d+\s+\([+-]\d+\))\s+(\d+\s+\([+-]\d+\))\s+(\d+\s+\([+-]\d+\))\s+(\d+\s+\([+-]\d+\))\s+(\d+\s+\([+-]\d+\))\s+(\d+\s+\([+-]\d+\))")
+        match_stats = pattern_stats.search(line)
         if match:
             list_of_statblock_data.append({"start": line_i+1, "end": len(list_of_lines), "num": int(match.group(1))})
+            num_nums += 1
+        if match_stats:
+            num_stats += 1
         line_i += 1
+    
+    #check for formatting errors
+    if num_nums == 0 or num_stats == 0:
+        raise Exception("No complete statblocks found")
+    if num_nums != num_stats:
+        raise Exception("Formatting error, number of num-s and statblocks is not equal")
 
     #set the end point in statblocks
     statblock_i = 1
