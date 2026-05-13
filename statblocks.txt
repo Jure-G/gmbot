@@ -1,4 +1,4 @@
-num = 3
+num = 2
 Commoner
 
 Medium humanoid (any race), any alignment
@@ -94,3 +94,65 @@ The dragon can take 3 legendary actions, choosing from the options below. Only o
 About
 
 A crown of cruel horns surrounds the head of this mighty dragon. Thick scales the color of molten rock cover its long body.
+num = 1
+Mage
+
+Medium humanoid (any race), any alignment
+
+Armor Class 12 (15 with mage armor)
+Hit Points 40 (9d8)
+Speed 30 ft.
+STR 	DEX 	CON 	INT 	WIS 	CHA
+9 (-1) 	14 (+2) 	11 (+0) 	17 (+3) 	12 (+1) 	11 (+0)
+
+Saving Throws Int +6, Wis +4
+Skills Arcana +6, History +6
+Senses: passive Perception 11
+Languages any four languages
+Challenge 6 (2,300 XP)
+
+Special Traits
+
+    Spellcasting: The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:
+        Cantrips (at will): fire bolt, light, mage hand, prestidigitation
+        1st level (4 slots): detect magic, mage armor, magic missile, shield
+        2nd level (3 slots): misty step, suggestion
+        3rd level (3 slots): counterspell, fireball, fly
+        4th level (3 slots): greater invisibility, ice storm
+        5th level (1 slot): cone of cold
+
+Actions
+
+    Dagger: Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + piercing damage.
+num = 13
+Devil, Lemure
+
+Family: Devils
+
+Medium fiend (devil), lawful evil
+
+Armor Class 7
+Hit Points 13 (3d8)
+Speed 15 ft.
+STR 	DEX 	CON 	INT 	WIS 	CHA
+10 (+0) 	5 (-3) 	11 (+0) 	1 (-5) 	11 (+0) 	3 (-4)
+
+Damage Resistances cold
+Damage Immunities fire, poison
+Condition Immunities charmed, frightened, poisoned
+Senses: darkvision 120 ft., passive Perception 10
+Languages understands Infernal but can’t speak
+Challenge 0 (10 XP)
+
+Special Traits
+
+    Devil’s Sight: Magical darkness doesn’t impede the lemure’s darkvision.
+    Hellish Rejuvenation: A lemure that dies in the Nine Hells comes back to life with all its hit points in 1d10 days unless it is killed by a good-aligned creature with a bless spell cast on that creature or its remains are sprinkled with holy water.
+
+Actions
+
+    Fist: Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.
+
+About
+
+A roiling wave of flesh gushes forward. Amid the fatty surge wriggle half-formed limbs and a dripping tumorous face.
