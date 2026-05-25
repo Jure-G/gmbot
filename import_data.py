@@ -101,6 +101,3 @@ def import_data(path_to_file):
         npc["rechargable"] = rechargable
         list_npcs.append(npc)
     return list_npcs
-
-import_data("./test.txt")
-
