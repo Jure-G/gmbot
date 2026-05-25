@@ -40,13 +40,19 @@ def import_data(path_to_file):
     for statblock_data in list_of_statblock_data:
         i = 0
         while i < statblock_data["num"]:
-            statblock_list.append(list_of_lines[statblock_data["start"]:statblock_data["end"]])
+            edited_lines = list_of_lines[statblock_data["start"]:statblock_data["end"]]
+            if i > 0:
+                edited_lines[0] = edited_lines[0] + " #" + str(i + 1)
+            statblock_list.append(edited_lines)
+                
             i += 1
     
     list_npcs = []
 
     for statblock in statblock_list:
         npc = {}
+        #set type
+        npc["type"] = "NPC"
         #set name
         npc["name"] = statblock[0]
         spell_slots = {}
@@ -90,10 +96,11 @@ def import_data(path_to_file):
                         npc["initiative_bonus"] = match_initiative.group(1)
             else:
                 formatted_statblock.append(line)
-        npc["formatted_statblock"] = formatted_statblock
+        npc["statblock"] = formatted_statblock
         npc["spell_slots"] = spell_slots
         npc["rechargable"] = rechargable
         list_npcs.append(npc)
     return list_npcs
-import_data("./statblocks.txt")
+
+import_data("./test.txt")
 
