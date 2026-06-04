@@ -58,7 +58,7 @@ def import_data(path_to_file):
         spell_slots = {}
         rechargable = {}
         #set empty list of conditions
-        npc["conditions"] = []
+        npc["conditions"] = {}
         formatted_statblock = []
         for line in statblock:
             #set rechargable
@@ -77,8 +77,8 @@ def import_data(path_to_file):
             pattern = re.compile(r"Hit Points (\d+) \(\d+d\d+")
             match = pattern.search(line)
             if match:
-                npc["max_hp"] = match.group(1)
-                npc["current_hp"] = match.group(1)
+                npc["max_hp"] = int(match.group(1))
+                npc["current_hp"] = int(match.group(1))
 
             #set formatted statblock(list of lines) and initiative
             pattern = re.compile(r"STR\s+DEX\s+CON\s+INT\s+WIS\s+CHA")
@@ -99,5 +99,6 @@ def import_data(path_to_file):
         npc["statblock"] = formatted_statblock
         npc["spell_slots"] = spell_slots
         npc["rechargable"] = rechargable
+        npc["is_alive"] = True
         list_npcs.append(npc)
     return list_npcs
