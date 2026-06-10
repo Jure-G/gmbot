@@ -5,7 +5,7 @@ from import_data import import_data
 from commands import roll_command, damage, heal, conditions, spellslots
 
 def main():
-    print("Wellcome to GMbot! If you at any point want to exit the program you can write exit or q.")
+    print("Welcome to GMbot! If you at any point want to exit the program you can write exit or q.")
     path = get_input("Write the path to your statblock data file, if you wish to use default (./statblocks.txt) leave empty:")
     if path == "":
         creatures = import_data("./statblocks.txt")
