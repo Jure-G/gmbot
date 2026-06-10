@@ -62,13 +62,12 @@ def import_data(path_to_file):
         formatted_statblock = []
         for line in statblock:
             #set rechargable
-            pattern = re.compile(r"^\s*(.+)\s+\(Recharge (\d+-\d+)\)")
+            pattern = re.compile(r"^\s*(.+)\s+\(Recharge (\d+)-(\d+)\)")
             match = pattern.search(line)
             if match:
-                rechargable[match.group(1)] = match.group(2)
-
+                rechargable = {"name":match.group(1), "min":int(match.group(2)), "max":int(match.group(3)), "is_avaliable":True}
             #set spell_slots
-            pattern = re.compile(r"(\d[st|nd|rd|th]+) level \((\d) slot")
+            pattern = re.compile(r"(\d+[st|nd|rd|th]+) level \((\d+) slot")
             match = pattern.search(line)
             if match:
                 spell_slots[match.group(1)] = int(match.group(2))
@@ -97,7 +96,7 @@ def import_data(path_to_file):
             else:
                 formatted_statblock.append(line)
         npc["statblock"] = formatted_statblock
-        npc["spell_slots"] = spell_slots
+        npc["spellslots"] = spell_slots
         npc["rechargable"] = rechargable
         npc["is_alive"] = True
         list_npcs.append(npc)

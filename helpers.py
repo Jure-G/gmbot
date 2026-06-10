@@ -40,24 +40,19 @@ def target_selection(creatures):
             print(f"Incorrect entry, please enter the number before the target, it is supposed to be between 1 and {len(creatures)+1}")
     return creatures[target_index]
 
-def input_roll():
-    while True:
-        print("Write the number directly or if you want to roll write xdx where x is any positive whole number. If you want to add or subtract from the result you can add +x or -x at the end.")
-        input_text = get_input(":")
-        pattern = re.compile(r"^(\d+)d(\d+)([+-]\d+)?$")
-        match = pattern.search(input_text)
-        pattern_num = re.compile(r"^(\d+)$")
-        match_num = pattern_num.search(input_text)
-        if match:
-            result = roll(int(match.group(1)), int(match.group(2)))
-            if match.group(3):
-                result += int(match.group(3))
-            print(f"Result of the roll: {result}")
-            break
-        elif match_num:
-            result = int(input_text)
-            break
-        else:
-            print("Wrong formatting, please try again (examples: 12, 1d4+2, 2d8).")
+def input_roll(input_text):
+    pattern = re.compile(r"^(\d+)d(\d+)([+-]\d+)?$")
+    match = pattern.search(input_text)
+    pattern_num = re.compile(r"^(\d+)$")
+    match_num = pattern_num.search(input_text)
+    if match:
+        result = roll(int(match.group(1)), int(match.group(2)))
+        if match.group(3):
+            result += int(match.group(3))
+        print(f"Result of the roll: {result}")
+    elif match_num:
+        result = int(match_num.group(1))
+    else:
+        result = False
     return result
 
